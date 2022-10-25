@@ -7,19 +7,7 @@
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!-- Zona de definición de nuestros benas -->
-<bean id="saludoFormal" class="com.trifulcas.springprueba.Formal"></bean>
-
-<bean id="saludoInformal" class="com.trifulcas.springprueba.Informal"></bean>
-
-<bean id="miSaludo" class="com.trifulcas.springprueba.Saludos" scope="singleton" 
-init-method="iniciar" destroy-method="finalizar">
-<property name="saludo" ref="saludoFormal"></property>
-</bean>
-
-<bean id="miVecino" class="com.trifulcas.springprueba.Vecino">
-<!-- <constructor-arg ref="saludoInformal"></constructor-arg> -->
-<property name="saludo" ref="saludoInformal"></property>
-</bean>
+<!-- Habilitaremos el escaneo de componentes -->
+<context:component-scan base-package="com.trifulcas.springprueba"></context:component-scan>
 
 </beans>
